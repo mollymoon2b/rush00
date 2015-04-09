@@ -1,5 +1,9 @@
-<?php 
+<?php
+	$url = $_SERVER['HTTP_HOST'];
+
+	$rest = preg_replace("/rush00.local.42.fr:8080/", "", $url);
+	echo "$rest\n";
+	$ACTION[$url."/admin"];
 	require_once('includes/header.php');
-	echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
 	require_once('includes/footer.php');
  ?>

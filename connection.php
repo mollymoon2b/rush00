@@ -1,10 +1,17 @@
-<?php
+<?PHP
 	session_start();
 
 	$user='alice';
 	$pass='123';
+	$bdd = array();
 
-	if (isset($_POST['submit'])){
+	while ($line = file("/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd"))
+		$bdd  = implode(':', $line);
+	
+	foreach($bdd as $elem){
+		echo "$elem\n";
+	}
+		if (isset($_POST['submit'])){
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		if ($username&&$password){
@@ -19,19 +26,5 @@
 			echo "Veuillez saisir tous les champs";
 		}
 	}
+	require_once('includes/connection.html');
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-
-</head>
-<body>
-	<h1>Administration - Connexion</h1>
-	<form action="" method="POST">
-		<h3>Pseudo :</h3> <input type="text" name="username"> <br>
-		<h3>Mot de pass :</h3> <input type="password" name="password"> <br>
-		<input type="submit" name="submit">
-	</form>
-</body>
-</html>

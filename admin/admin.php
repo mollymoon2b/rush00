@@ -12,9 +12,7 @@
 
 					if ($title&&$description&&$price){
 						$limk = mysqli_connect("localhost","root","passlili", "site");
-						// mysql_select_db("$site") OR die( "ERREUR de connexion : " . mysql_error () );
 						 
-						//Requête pour insérer des données dans la TABLE COMMENTAIRES
 						$result = $link->query("SELECT * FROM products");
 						echo "<pre>";
 						while ($row = mysqli_fetch_array($result)) {
@@ -22,34 +20,6 @@
 						}
 						print_r($result);
 						echo "</pre>";
-						// $sql = mysql_query("INSERT INTO `products` (`id` ,`title` ,`description`,`price`)VALUES (NULL , '$title', '$description', '$price');
-						 
-						// ");
-						 
-						//Si il y a une erreur, on crie ^^
-						// if (!$sql)
-						// {
-						// die ( 'Erreur de requête : ' . mysql_error() );
-						// }
-						// //Si tout va bien
-						// else
-						// {
-						// echo 'Les données ont été enregistrées.';
-						// }
-						//Déconnexion
-						// mysql_close();
-
-						// try{
-						// 	$db = new MySQLi('mysql:host=localhost;dbname=site', 'root', 'passlili');
-						// }
-						// catch(Exception $e){
-						// 	echo "Une erreure est survenue";
-						// 	die();
-						// }
-						// $insert = $db->prepare("INSERT INTO products VALUES('', '$title' '$description', '$price')");
-						// // $insert = $db->prepare("SELECT title FROM products");
-						// $insert->execute();
-						// // print_r($insert);
 
 					}else{
 						echo "Veuillez remplir tous les champs";
