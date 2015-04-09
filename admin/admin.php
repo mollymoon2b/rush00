@@ -1,6 +1,5 @@
 <?php
  	session_start();
-
 	if (isset($_SESSION['username'])){
 
 		if(isset($_GET['action'])){
@@ -11,16 +10,18 @@
 					$price=$_POST['price'];
 
 					if ($title&&$description&&$price){
-						$limk = mysqli_connect("localhost","root","passlili", "site");
-						 
-						$result = $link->query("SELECT * FROM products");
-						echo "<pre>";
-						while ($row = mysqli_fetch_array($result)) {
-							print_r($row);
-						}
-						print_r($result);
-						echo "</pre>";
-
+					 
+						$data = array(array($line, $title, $description, $price)); //$Line++ pour modif les id
+						$line++;
+						if ($f = @fopen('../bdd/produit.csv', 'a=')) {
+						  foreach ($data as $ligne) {
+						    fputcsv($f, $ligne);
+						    }
+						  fclose($f);
+						  }
+						else {
+						  echo "Impossible d'acc&eacute;der au fichier.";
+						  }
 					}else{
 						echo "Veuillez remplir tous les champs";
 					}
