@@ -1,0 +1,22 @@
+h1{
+	margin-left: 20px;
+	margin-bottom: 100px;
+}
+
+.menu {
+}
+
+.menu li {
+	display: inline;
+}
+
+.menu li a{
+	padding: 20px 80px;
+	background-color: blue;
+	color: white;
+}
+
+.menu li a:hover{
+	background-color: black;
+	color: white;
+}
