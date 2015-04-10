@@ -1,0 +1,30 @@
+<?php session_start(); ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../style/style.css">
+</head>
+<body>
+	<div class="header">
+		<h1>Site cd e-commerce</h1>
+		<ul class="menu">
+			<li><a href="../index.php"> Accueil</a></li>
+			<li><a href="boutique.php">Boutique</a></li>
+			<li><a href="panier.php">Panier</a></li>
+			<li><a href="connection.php">Connexion</a></li>
+			<li><a href="inscription.php">Inscription</a></li>
+		</ul>
+	</div>
+	<div class="content">
+	<?php
+	if ($_SERVER["REQUEST_URI"] == "/connection.php"){
+		require_once('connection.html');
+	}
+
+	?>
+	</div>
+	<?php require_once('footer.html'); ?>
+</body>	
+</html>

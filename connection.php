@@ -19,5 +19,5 @@
 			echo "Veuillez saisir tous les champs";
 		}
 	}
-	require_once('includes/connection.html');
+	require_once('includes/layout.html');
 ?>
