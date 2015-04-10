@@ -1,9 +1,15 @@
 h1{
-	margin-left: 20px;
-	margin-bottom: 100px;
+	text-align: center;
+	padding: 40px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
 }
 
 .menu {
+	width: 100%;
 }
 
 .menu li {
@@ -11,7 +17,8 @@ h1{
 }
 
 .menu li a{
-	padding: 20px 80px;
+	padding: 20px;
+	font-size: 40px;
 	background-color: blue;
 	color: white;
 }
