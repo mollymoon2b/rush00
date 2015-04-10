@@ -6,9 +6,9 @@
 			$password = $_POST['password'];
 			$delimiter = ':';
 			if ($username&&$password){
-					 
-				$data = array(array($line, $username, $password)); //$Line++ pour modif les id
-				$line++;
+				$password = hash("whirlpool", $_POST['password']);	 
+				$data = array(array($ligne, $username, $password)); //$Line++ pour modif les id
+				$line = 0;
 				if ($f = @fopen('bdd/user.csv', 'a=')) {
 					 foreach ($data as $ligne) {
 					   fputcsv($f, $ligne, $delimiter);
@@ -23,4 +23,5 @@
 			}
 		}
 		require_once('includes/inscription.html');
+
 ?>
