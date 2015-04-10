@@ -1,9 +1,35 @@
+/*vert = #0DD113*/
+/*vert fonce = #0AA80F*/
+/*bleu clair  =  #14A9FF*/
+/* bleu foncer = #1084C7*/
+/* noir = # #000000*/
+/*blanc = #FFFFFF*/
+
+*{
+	border: 0;
+	margin: 0;
+}
+
 h1{
-	margin-left: 20px;
-	margin-bottom: 100px;
+	margin-left: 60px;
+	padding: 40px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
 }
 
 .menu {
+	width:100%;
+	background-color: #14A9FF;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.menu img{
+	width: 40px;
+	padding-right: 20px;
 }
 
 .menu li {
@@ -11,12 +37,12 @@ h1{
 }
 
 .menu li a{
-	padding: 20px 80px;
-	background-color: blue;
+	font-size: 40px;
+	padding: 20px 40px 10px 10px;
 	color: white;
 }
 
 .menu li a:hover{
-	background-color: black;
+	background-color: #1084C7;
 	color: white;
 }

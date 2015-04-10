@@ -26,6 +26,6 @@
 		} else {
 			echo "Veuillez remplir tous les champs";
 		}
+		require_once('includes/layout.html');
 	}
-	require_once('includes/layout.html');
 ?>
