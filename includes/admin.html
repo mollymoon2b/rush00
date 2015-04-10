@@ -12,12 +12,12 @@
 		foreach($tabUser as $user){
 
 			if ($user[1]){
-				echo "<tr><td>$user[1]</td><td>$user[3]</td><td><a>lien vers list</a></td><td><img id=\"$user[1]_$index\" src=\"../img/delete.png\"></td></tr>";
-				echo "<script>var current = document.getElementById(\"$user[1]_$index\");current.infoUser = \"$user[1]\";current.addEventListener(\"click\", function(){delElem(this.infoUser);}, false)</script>";
+				echo "<tr><td>$user[1]</td><td>$user[3]</td><td><a>lien vers list</a></td><td><a href=\"delElem.php?delElem=$user[1]\"><img src=\"../img/delete.png\"></a></td></tr>";
 				$index++;
 			}
 		}
 		echo "</table>";
 	}
+	fclose($f);
 ?>
 </div>

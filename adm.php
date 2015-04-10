@@ -5,4 +5,7 @@
 	} else {
 		header('location: index.php');
 	}
+	if (isset($_POST['destroy'])){
+		echo "test destroy";
+	}
 ?>

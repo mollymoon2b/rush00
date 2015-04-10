@@ -36,6 +36,8 @@
 		require_once('includes/monMagasin.html');
 	} else if ($URI == "/adm.php"){
 		require_once('includes/admin.html');
+	} else if (explode("?", $URI)[0] == '/delElem.php') {
+		require_once('includes/form/delElem.html');
 	} else {
 		require_once('includes/new.html');
 	}
