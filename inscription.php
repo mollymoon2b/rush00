@@ -1,9 +1,7 @@
 <?php
- 	session_start();
-
 	if(isset($_POST['submit'])){
 		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$password = hash("whirlpool", $_POST['password']);
 		if ($username&&$password){
 			if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'r+')) {
 				$end = 1;
@@ -17,8 +15,7 @@
     			if ($end == 1){
     				$index = intval($info[0]);
     				$index++;
-    				$password = hash("whirlpool", $_POST['password']);
-    				$data = array($index, $username, $password);
+    				$data = array($index, $username, $password, "osef");
     				fputcsv($f, $data, ":");
     			}
 			  	fclose($f);
