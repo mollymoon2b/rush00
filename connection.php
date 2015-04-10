@@ -15,9 +15,10 @@
         				}
         				$end = 0;
         			}
-    			}if ($end == 1)
+    			} if ($end == 1)
     				echo "invalide login";		
 			}
+			fclose($f);
 		}else{
 			echo "Veuillez saisir tous les champs";
 		}

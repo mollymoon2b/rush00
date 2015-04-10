@@ -1,8 +1,9 @@
 <?php
 	if(isset($_POST['submit'])){
 		$username = $_POST['username'];
-		$password = hash("whirlpool", $_POST['password']);
-		if ($username&&$password){
+		if (isset($_POST['password']))
+			$password = hash("whirlpool", $_POST['password']);
+		if ($username && $password){
 			if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'r+')) {
 				$end = 1;
 				while ($end && ($buffer = fgets($f, 4096)) !== false) {
@@ -26,6 +27,6 @@
 		} else {
 			echo "Veuillez remplir tous les champs";
 		}
-		require_once('includes/layout.html');
 	}
+	require_once('includes/layout.html');
 ?>
