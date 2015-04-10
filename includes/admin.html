@@ -7,10 +7,15 @@
 			$user = explode(":", $buffer);
 			array_push($tabUser, $user);
 		}
+		$index = 0;
 		echo "<table class=\"user\"><tr><td>UserName</td><td>RangLevel</td><td>MagasinUser</td><td>suppression</td></tr>";
 		foreach($tabUser as $user){
-			if ($user[1])
-				echo "<tr><td>$user[1]</td><td>$user[3]</td><td>lien vers list</td></tr>";
+
+			if ($user[1]){
+				echo "<tr><td>$user[1]</td><td>$user[3]</td><td><a>lien vers list</a></td><td><img id=\"$user[1]_$index\" src=\"../img/delete.png\"></td></tr>";
+				echo "<script>var current = document.getElementById(\"$user[1]_$index\");current.infoUser = \"$user[1]\";current.addEventListener(\"click\", function(){delElem(this.infoUser);}, false)</script>";
+				$index++;
+			}
 		}
 		echo "</table>";
 	}
