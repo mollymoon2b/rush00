@@ -1,0 +1,18 @@
+<h1>page admin</h1>
+<div class="adminUser">
+<?PHP 
+	$tabUser = array();
+	if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'r')){
+		while (($buffer = fgets($f, 4096)) !== false) {
+			$user = explode(":", $buffer);
+			array_push($tabUser, $user);
+		}
+		echo "<table class=\"user\"><tr><td>UserName</td><td>RangLevel</td><td>MagasinUser</td><td>suppression</td></tr>";
+		foreach($tabUser as $user){
+			if ($user[1])
+				echo "<tr><td>$user[1]</td><td>$user[3]</td><td>lien vers list</td></tr>";
+		}
+		echo "</table>";
+	}
+?>
+</div>

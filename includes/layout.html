@@ -6,27 +6,37 @@
 </head>
 <body>
 	<div class="header">
-		<a href="../index.php"><h1>Site cd e-commerce</h1></a>
+		<a href="../index.php"><h1>Site e-commerce</h1></a>
 		<ul class="menu">
-			<li><a href="../index.php"><img src="../img/home.png"> Accueil </a></li>
+			<li><a href="index.php"><img src="../img/home.png"> Accueil </a></li>
 			<li><a href="boutique.php"><img src="../img/shop.png">Boutique</a></li>
-			<li><a href="panier.php"><img src="../img/panier.png"> Panier </a></li>
-			<li><a href="connection.php"> <img src="../img/connexion.png">Connexion</a></li>
-			<li><a href="inscription.php"> <img src="../img/inscription.png"> Inscription</a></li>
+			<?php 
+				if (isset($_SESSION['username']) && $_SESSION['rangUser'] == "0")require_once('includes/form/adm.html');
+				if (isset($_SESSION['username'])) 
+					require_once('includes/form/deconnection.html');
+				else 
+					require_once('includes/form/connection.html'); 
+
+			?>
 		</ul>
 	</div>
 	<div class="content">
 	<?php
-	if ($_SERVER["REQUEST_URI"] == "/connection.php"){
+	$URI = $_SERVER["REQUEST_URI"];
+	if ($URI == "/connection.php"){
 		require_once('connection.html');
-	} else if ($_SERVER["REQUEST_URI"] == "/inscription.php"){
+	} else if ($URI == "/inscription.php"){
 		require_once('includes/inscription.html');
-	} else if ($_SERVER["REQUEST_URI"] == "/boutique.php") {
+	} else if ($URI == "/boutique.php") {
 		require_once('includes/boutique.html');
-	} else if ($_SERVER["REQUEST_URI"] == "/panier.php"){
+	} else if ($URI == "/panier.php"){
 		require_once('includes/panier.html');
+	} else if ($URI == "/monMagasin.php"){
+		require_once('includes/monMagasin.html');
+	} else if ($URI == "/adm.php"){
+		require_once('includes/admin.html');
 	} else {
-
+		require_once('includes/new.html');
 	}
 	print_r($_SESSION);
 	?>
