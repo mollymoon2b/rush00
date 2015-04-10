@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="header">
-		<h1>Site cd e-commerce</h1>
+		<a href="../index.php"><h1>Site cd e-commerce</h1></a>
 		<ul class="menu">
 			<li><a href="../index.php"> Accueil</a></li>
 			<li><a href="boutique.php">Boutique</a></li>
@@ -21,8 +21,15 @@
 	<?php
 	if ($_SERVER["REQUEST_URI"] == "/connection.php"){
 		require_once('connection.html');
-	}
+	} else if ($_SERVER["REQUEST_URI"] == "/inscription.php"){
+		require_once('includes/inscription.html');
+	} else if ($_SERVER["REQUEST_URI"] == "/boutique.php") {
+		require_once('includes/boutique.html');
+	} else if ($_SERVER["REQUEST_URI"] == "/panier.php"){
+		require_once('includes/panier.html');
+	} else {
 
+	}
 	?>
 	</div>
 	<?php require_once('footer.html'); ?>

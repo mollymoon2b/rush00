@@ -22,6 +22,6 @@
 				echo "Veuillez remplir tous les champs";
 			}
 		}
-		require_once('includes/inscription.html');
+		require_once('includes/layout.html');
 
 ?>
