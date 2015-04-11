@@ -8,6 +8,7 @@
 <body>
 	<div class="header">
 		<a href="../index.php"><h1>Site e-commerce</h1></a>
+		<?PHP if(isset($_SESSION['username']) && ($_SESSION['username'] != "")) echo "<h2>Bienvenue $_SESSION[username]"; ?>
 		<ul class="menu">
 			<li><a href="index.php"><img src="../img/home.png"> Accueil </a></li>
 			<li><a href="boutique.php"><img src="../img/shop.png">Boutique</a></li>
