@@ -115,3 +115,21 @@ input[type=submit]:hover, input[type=reset]:hover {
 .formNewArt input{
 	margin-bottom: 10px;
 }
+
+/*BOutique*/
+
+.boutique {
+	margin-left: 150px;
+}
+
+.boutique table{
+	border-collapse: collapse;
+}
+
+.boutique td{
+	border: 1px solid black;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-right: 25px;
+	padding-left: 25px;
+}
