@@ -2,7 +2,9 @@
 <div class="boutique">
 	<?PHP 
 		$tabUser = array();
-		if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/produit.csv', 'r')){
+		// if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/produit.csv', 'r')){
+		if ($f = fopen('/Applications/MAMP/htdocs/bdd/produit.csv', 'r')){
+		
 			while (($buff = fgetcsv($f, 4096, ":")) !== false) {
 				array_push($tabUser, $buff);
 			}

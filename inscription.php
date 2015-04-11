@@ -6,7 +6,8 @@
 			if (isset($_POST['password']))
 				$password = hash("whirlpool", $_POST['password']);
 			if ($username && $password){
-				if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'r+')) {
+				// if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'r+')) {
+				if ($f = fopen('/Applications/MAMP/htdocs/bdd/user.csv', 'r+')){
 					$end = 1;
 					while ($end && ($buffer = fgets($f, 4096)) !== false) {
 	        			$info = explode(":", $buffer);

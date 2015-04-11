@@ -13,7 +13,9 @@
 	<h3>Gerer mes produits</h3>
 	<?PHP 
 		$tabUser = array();
-		if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/produit.csv', 'r')){
+		// if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/produit.csv', 'r')){
+		if ($f = fopen('/Applications/MAMP/htdocs/bdd/produit.csv', 'r')){
+		
 			while (($buffer = fgets($f, 4096)) !== false) {
 				$user = explode(":", $buffer);
 				array_push($tabUser, $user);
