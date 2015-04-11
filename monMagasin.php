@@ -11,23 +11,23 @@
 					fputcsv($f, $data, ":");
 					fclose($f);
 				}
-				$bddUser = [];
-				if ($p = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'r')) {
-					while (($buff = fgets($p, 4096)) !== false){
-						$tmp = explode(":", $buff);
-						if ($tmp[1] === $_SESSION['username']){
-							$tab = explode(",", $tmp[4]);
-							array_push($tab, $index);
-							$tmp[4] = implode(",", $tab);
-						}
-						array_push($bddUser, $tmp);
-					}
-				}
-				fclose($p);
-				if ($p = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'w')) {
-					foreach($bddUser as $user) fputcsv($p, $user, ":");
-				}
-				fclose($p);
+				// $bddUser = [];
+				// if ($p = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'r')) {
+				// 	while (($buff = fgets($p, 4096)) !== false){
+				// 		$tmp = explode(":", $buff);
+				// 		if ($tmp[1] === $_SESSION['username']){
+				// 			$tab = explode(",", $tmp[4]);
+				// 			array_push($tab, $index);
+				// 			$tmp[4] = implode(",", $tab);
+				// 		}
+				// 		array_push($bddUser, $tmp);
+				// 	}
+				// }
+				// fclose($p);
+				// if ($p = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'w')) {
+				// 	foreach($bddUser as $user) fputcsv($p, $user, ":");
+				// }
+				// fclose($p);
 			}
 		}	
 	} else {

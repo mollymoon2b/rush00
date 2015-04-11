@@ -8,6 +8,21 @@
 	<input type="submit" name="submit" value="Vendre"/>
 </div>
 <div class="gestionProduit">
-	<h3>Gerer mes articles</h3>
-
+	<?PHP 
+		$tabUser = array();
+		if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/produit.csv', 'r')){
+			while (($buffer = fgets($f, 4096)) !== false) {
+				$user = explode(":", $buffer);
+				array_push($tabUser, $user);
+			}
+			echo "<table class=\"user\"><tr><td>Nom</td><td>Prix</td><td>Description</td><td>suppression</td></tr>";
+			foreach($tabUser as $user){
+				if ($user[1] === $_SESSION['username']){
+					echo "<tr><td>$user[2]</td><td>$user[3]</td><td>$user[4]</td><td><a href=\"delElem.php?delElem=$user[0]&type=obj\"><img src=\"../img/delete.png\"></a></td></tr>";
+				}
+			}
+			echo "</table>";
+		}
+		fclose($f);
+	?>
 </div>
