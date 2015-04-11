@@ -12,7 +12,9 @@
 			<li><a href="index.php"><img src="../img/home.png"> Accueil </a></li>
 			<li><a href="boutique.php"><img src="../img/shop.png">Boutique</a></li>
 			<?php 
-				if (isset($_SESSION['username']) && $_SESSION['rangUser'] == "0")require_once('includes/form/adm.html');
+				if (isset($_SESSION['username']) && $_SESSION['rangUser'] == 1){
+					require_once('includes/form/adm.html');					
+				}
 				if (isset($_SESSION['username'])) 
 					require_once('includes/form/deconnection.html');
 				else 
@@ -41,7 +43,6 @@
 	} else {
 		require_once('includes/new.html');
 	}
-	print_r($_SESSION);
 	?>
 	</div>
 	<?php require_once('footer.html'); ?>

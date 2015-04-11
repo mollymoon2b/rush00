@@ -16,8 +16,8 @@
 	        			}
 	    			}
 	    			if ($end == 1){
-	    				if ($index = intval($info[0]))
-	    					$index++;
+	    				$index = intval($info[0]);
+	    				$index++;
 	    				$data = array($index, $username, $password, "5");
 	    				fputcsv($f, $data, ":");
 	    				$_SESSION['username'] = $username;

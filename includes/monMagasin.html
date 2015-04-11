@@ -2,12 +2,15 @@
 <div class="formNewArt">
 	<h3>Ajouter un nouveau article</h3>
 	<form action="" method="POST">
-	<h4>Nom:</h4><input type="text" name="nameArt" placeholder="Nom de l'article"/>
-	<h4>Prix:</h4><input type="number" name="prixArt" value="0"/>
-	<h4>description:</h4><textarea type="text" name="descArt" placeholder="Description de l'article" rows="4" cols="50" class="zoneText"></textarea>
+	<h4>Nom :</h4><input type="text" name="nameArt" placeholder="Nom de l'article"/>
+	<h4>Quantite :</h4><input type="number", name="qtsArt" value="1"/>
+	<h4>Prix :</h4><input type="number" name="prixArt" value="0"/>
+	<h4>description :</h4><input type="text" name="descArt" placeholder="Description de l'article" class="zoneText"/>
 	<input type="submit" name="submit" value="Vendre"/>
 </div>
+
 <div class="gestionProduit">
+	<h3>Gerer mes produits</h3>
 	<?PHP 
 		$tabUser = array();
 		if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/produit.csv', 'r')){
@@ -15,10 +18,10 @@
 				$user = explode(":", $buffer);
 				array_push($tabUser, $user);
 			}
-			echo "<table class=\"user\"><tr><td>Nom</td><td>Prix</td><td>Description</td><td>suppression</td></tr>";
+			echo "<table class=\"user\"><tr><td>Nom</td><td>Quantite</td><td>Prix</td><td>Description</td><td>suppression</td></tr>";
 			foreach($tabUser as $user){
 				if ($user[1] === $_SESSION['username']){
-					echo "<tr><td>$user[2]</td><td>$user[3]</td><td>$user[4]</td><td><a href=\"delElem.php?delElem=$user[0]&type=obj\"><img src=\"../img/delete.png\"></a></td></tr>";
+					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"delElem.php?delElem=$user[0]&type=obj\"><img src=\"../img/delete.png\"></a></td></tr>";
 				}
 			}
 			echo "</table>";

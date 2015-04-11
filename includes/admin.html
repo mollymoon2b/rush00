@@ -1,23 +1,42 @@
 <h1>page admin</h1>
+<h3>Gestion des Utilisateurs</h3>
 <div class="adminUser">
-<?PHP 
-	$tabUser = array();
-	if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'r')){
-		while (($buffer = fgets($f, 4096)) !== false) {
-			$user = explode(":", $buffer);
-			array_push($tabUser, $user);
-		}
-		$index = 0;
-		echo "<table class=\"user\"><tr><td>UserName</td><td>RangLevel</td><td>MagasinUser</td><td>suppression</td></tr>";
-		foreach($tabUser as $user){
-
-			if ($user[1]){
-				echo "<tr><td>$user[1]</td><td>$user[3]</td><td><a>lien vers list</a></td><td><a href=\"delElem.php?delElem=$user[1]\"><img src=\"../img/delete.png\"></a></td></tr>";
-				$index++;
+	<?PHP 
+		$tabUser = array();
+		if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/user.csv', 'r')){
+			while (($buffer = fgets($f, 4096)) !== false) {
+				$user = explode(":", $buffer);
+				array_push($tabUser, $user);
 			}
+			$index = 0;
+			echo "<table class=\"user\"><tr><td>UserName</td><td>RangLevel</td><td>MagasinUser</td><td>suppression</td></tr>";
+			foreach($tabUser as $user){
+
+				if ($user[1]){
+					echo "<tr><td>$user[1]</td><td>$user[3]</td><td><a>lien vers list</a></td><td><a href=\"delElem.php?delElem=$user[1]&obj=user\"><img src=\"../img/delete.png\"></a></td></tr>";
+					$index++;
+				}
+			}
+			echo "</table>";
 		}
-		echo "</table>";
-	}
-	fclose($f);
-?>
+		fclose($f);
+	?>
+</div>
+<h3>Gestion des protuits</h3>
+<div class="adminProduit">
+	<?PHP 
+		$tabUser = array();
+		if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/produit.csv', 'r')){
+			while (($buffer = fgets($f, 4096)) !== false) {
+				$user = explode(":", $buffer);
+				array_push($tabUser, $user);
+			}
+			echo "<table class=\"user\"><tr><td>Nom</td><td>Prix</td><td>Quantite</td><td>Description</td><td>suppression</td></tr>";
+			foreach($tabUser as $user){
+					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"delElem.php?delElem=$user[0]&obj=produit\"><img src=\"../img/delete.png\"></a></td></tr>";
+			}
+			echo "</table>";
+		}
+		fclose($f);
+	?>
 </div>
