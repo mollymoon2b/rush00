@@ -20,11 +20,12 @@ a {
 }
 
 .image_titre img{
-	width: 400px;
+	width: 500px;
 	margin-top: -52px;
 }
 
 .bonjour {
+	font-size: 30px;
 	margin-top: -69px;
 	padding-bottom: 120px;
 }
@@ -48,7 +49,7 @@ a {
 
 .menu li a{
 	font-size: 40px;
-	padding: 20px 40px 10px 10px;
+	padding: 20px 190px 10px 10px;
 	color: white;
 }
 
@@ -57,22 +58,28 @@ a {
 	color: white;
 }
 
+h1{
+	font-size: 65px;
+}
+
 form {
-	margin-left: 100px;
-	/*margi*/
- 	width:280px;
+	font-size: 40px;
+	margin-left: 20px;
+ 	width:320px;
  }
 
 h3{
+	font-size: 40px;
 	padding-top: 10px;
 }
 
 input {
+	font-size: 40px;
  padding:3px;
  border:1px solid black;
  border-radius:5px;
  margin-top: 10px;
- width:200px;
+ width:400px;
  padding-top: 5px;
  padding-bottom: 5px;
  }
@@ -88,9 +95,10 @@ input[type=submit]:hover, input[type=reset]:hover {
  /*mon magasin*/
 
 .gestionProduit {
-	margin-left: 150px;
-	margin-top: -366px;
-	padding-bottom: 200px;
+	font-size: 35px;
+	margin-left: 859px;
+	margin-top: -779px;
+	padding-bottom: 650px;
 }
 
 .gestionProduit table{
@@ -138,6 +146,7 @@ input[type=submit]:hover, input[type=reset]:hover {
 }
 
 .boutique td{
+	font-size: 35px;
 	border: 1px solid black;
 	padding-top: 25px;
 	padding-bottom: 25px;
@@ -148,14 +157,15 @@ input[type=submit]:hover, input[type=reset]:hover {
 /*new accueil*/
 
 .categories_acceuil {
-	width: 650px;
+	width: 1550px;
 	margin: 0 auto;
-	margin-top: -100px;
+	margin-top: -13px;
+	padding-bottom: 50px;
 }
 
 .categories_acceuil img {
-	width: 150px;
-	margin-left: 150px;
+	width: 400px;
+	margin-left: 200px;
 	margin-top: 100px;
 }
 
