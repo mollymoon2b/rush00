@@ -9,6 +9,8 @@
 		$data = array($_POST['qtsArt'], $_GET['name'], $_GET['bdd'], $_GET['idItem']);
 		array_push($tmp, $data);
 		$_SESSION['panier'] = $tmp;
+		print_r($tmp);
+		echo "bite<br/>";
 		print_r($_SESSION);
 		// header('location: panier.php');
 	}
