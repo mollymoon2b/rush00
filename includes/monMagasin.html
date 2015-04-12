@@ -2,6 +2,13 @@
 <div class="formNewArt">
 	<h3>Ajouter un nouveau article</h3>
 	<form action="" method="POST" class="article">
+		<h4>categorie</h4><select name="catArt">
+		<option></option>
+		<option value="animaux">Animaux</option>
+		<option value="histoires">Histoires</option>
+		<option value="reves">Reves</option>
+		<option value="sexe">Sexe</option>
+	</select>
 	<h4>Nom :</h4><input type="text" name="nameArt" placeholder="Nom de l'article"/>
 	<h4>Quantite :</h4><input type="number", name="qtsArt" value="1"/>
 	<h4>Prix :</h4><input type="number" name="prixArt" value="0"/>
@@ -10,20 +17,85 @@
 </div>
 
 <div class="gestionProduit">
-	<h3>Gerer mes produits</h3>
+	<h3>Mes animaux</h3>
 	<?PHP 
-		$tabUser = array();
-		// if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/produit.csv', 'r')){
-		if ($f = fopen('/Applications/MAMP/htdocs/bdd/produit.csv', 'r')){
+		$tabAnimaux = array();
+		if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/animaux.csv', 'r')){
+		// if ($f = fopen('/Applications/MAMP/htdocs/bdd/produit.csv', 'r')){
 		
 			while (($buffer = fgets($f, 4096)) !== false) {
 				$user = explode(":", $buffer);
-				array_push($tabUser, $user);
+				array_push($tabAnimaux, $user);
 			}
 			echo "<table class=\"user\"><tr><td>Nom</td><td>Quantite</td><td>Prix</td><td>Description</td><td>suppression</td></tr>";
-			foreach($tabUser as $user){
+			foreach($tabAnimaux as $user){
 				if ($user[1] === $_SESSION['username']){
-					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"delElem.php?delElem=$user[0]&type=obj\"><img src=\"../img/delete.png\"></a></td></tr>";
+					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"delElem.php?delElem=$user[0]&obj=produit&bdd=animaux\"><img src=\"../img/delete.png\"></a></td></tr>";
+				}
+			}
+			echo "</table>";
+		}
+		fclose($f);
+	?>
+</div>
+<div class="gestionProduit">
+	<h3>Mes reves</h3>
+	<?PHP 
+		$tabReves = array();
+		if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/reves.csv', 'r')){
+		// if ($f = fopen('/Applications/MAMP/htdocs/bdd/produit.csv', 'r')){
+		
+			while (($buffer = fgetcsv($f, 4096, ":")) !== false) {
+				array_push($tabReves, $buffer);
+			}
+			echo "<table class=\"user\"><tr><td>Nom</td><td>Quantite</td><td>Prix</td><td>Description</td><td>suppression</td></tr>";
+			foreach($tabReves as $user){
+				if ($user[1] === $_SESSION['username']){
+					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"delElem.php?delElem=$user[0]&obj=produit&bdd=reves\"><img src=\"../img/delete.png\"></a></td></tr>";
+				}
+			}
+			echo "</table>";
+		}
+		fclose($f);
+	?>
+</div>
+<div class="gestionProduit">
+	<h3>Mes histoires</h3>
+	<?PHP 
+		$tabHistoire = array();
+		if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/histoires.csv', 'r')){
+		// if ($f = fopen('/Applications/MAMP/htdocs/bdd/produit.csv', 'r')){
+		
+			while (($buffer = fgets($f, 4096)) !== false) {
+				$user = explode(":", $buffer);
+				array_push($tabHistoire, $user);
+			}
+			echo "<table class=\"user\"><tr><td>Nom</td><td>Quantite</td><td>Prix</td><td>Description</td><td>suppression</td></tr>";
+			foreach($tabHistoire as $user){
+				if ($user[1] === $_SESSION['username']){
+					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"delElem.php?delElem=$user[0]&obj=produit&bdd=histoires\"><img src=\"../img/delete.png\"></a></td></tr>";
+				}
+			}
+			echo "</table>";
+		}
+		fclose($f);
+	?>
+</div>
+<div class="gestionProduit">
+	<h3>Sexe</h3>
+	<?PHP 
+		$tabSexe = array();
+		if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/sexe.csv', 'r')){
+		// if ($f = fopen('/Applications/MAMP/htdocs/bdd/produit.csv', 'r')){
+		
+			while (($buffer = fgets($f, 4096)) !== false) {
+				$user = explode(":", $buffer);
+				array_push($tabSexe, $user);
+			}
+			echo "<table class=\"user\"><tr><td>Nom</td><td>Quantite</td><td>Prix</td><td>Description</td><td>suppression</td></tr>";
+			foreach($tabSexe as $user){
+				if ($user[1] === $_SESSION['username']){
+					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"delElem.php?delElem=$user[0]&obj=produit&bdd=sexe\"><img src=\"../img/delete.png\"></a></td></tr>";
 				}
 			}
 			echo "</table>";

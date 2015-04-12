@@ -9,11 +9,12 @@
 	<div class="header">
 		<a href="../index.php" class="image_titre"><img src="img/titre.svg"></a>
 		<div class="bonjour">
-			<?PHP if(isset($_SESSION['username']) && ($_SESSION['username'] != "")) echo "<h2>Bienvenue $_SESSION[username]"; ?>
+			<?PHP if(isset($_SESSION['username']) && ($_SESSION['username'] != "")) echo "<h2>Bienvenue $_SESSION[username]</h2>"; ?>
 		</div>
 		<ul class="menu">
 			<li><a href="index.php"><img src="../img/home.png"> Accueil </a></li>
 			<li><a href="boutique.php"><img src="../img/shop.png">Boutique</a></li>
+			<li><a href="panier.php"><img src="../img/panier.png">Panier</a></li>
 			<?php 
 				if (isset($_SESSION['username']) && $_SESSION['rangUser'] == 1){
 					require_once('includes/form/adm.html');					
@@ -43,6 +44,8 @@
 		require_once('includes/admin.html');
 	} else if (explode("?", $URI)[0] == '/delElem.php') {
 		require_once('includes/form/delElem.html');
+	} else if (explode("?", $URI)[0] == '/buyItem.php') {
+		require_once('includes/form/buyItem.html');
 	} else {
 		require_once('includes/new.html');
 	}

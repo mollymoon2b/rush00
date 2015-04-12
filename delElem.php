@@ -35,6 +35,7 @@
 			// if ($f = fopen('/Applications/MAMP/htdocs/bdd/produit.csv', 'r+')){
 			$tabUser = array();
 			$delElem = $_GET['delElem'];
+			$bdd = $_GET['bdd']."csv";
 			if ($delElem === "franck" || $delElem === "alice")
 				header('location: adm.php');
 			while (($buff = fgetcsv($f, 4096, ":")) !== false) {
@@ -46,7 +47,7 @@
 			require_once('includes/layout.html');
 			if (isset($_POST['submit'])){
 				if ($_POST['elemDel'] === $delElem){
-					if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/produit.csv', 'w')){
+					if ($f = fopen('/nfs/zfs-student-2/users/2013/folier/mamp/apps/rush00/htdocs/bdd/'.$bdd, 'w')){
 					// if ($f = fopen('/Applications/MAMP/htdocs/bdd/produit.csv', 'w')){
 						foreach($tabUser as $data)
 							fputcsv($f, $data, ":");
