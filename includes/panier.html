@@ -1,2 +1,18 @@
 <h1>panier</h1>
-<?PHP print_r($_SESSION['panier']); ?>
+
+<div class="panier">
+<?PHP 
+	// print_r($_SESSION['panier']);
+	echo "<table class=\"user\"><tr><td>Nom</td><td>qts</td><td>prix</td></tr>";
+	foreach($_SESSION['panier'] as $user){
+		echo "<tr><td>$user[1]</td><td>$user[4]</td><td>$user[3]</td><td><img src=\"../img/delete.png\"></td></tr>";
+	}
+	echo "</table>";
+?>
+</div>
+<?PHP
+	if (isset($_SESSION['username']))
+		echo "<a href=\"\"><button class=\"buyItem\">Acheter</button></a>";
+	else
+		echo "<a href=\"connection.php\"><button class=\"buyItem\">Se connecter</button></a>";
+?>

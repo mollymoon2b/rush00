@@ -12,7 +12,7 @@
 			echo "<table class=\"user\"><tr><td>Nom</td><td>Quantite</td><td>Prix</td><td>Description</td><td>acheter</td></tr>";
 			foreach($tabAnimaux as $user){
 				if ($user[0] && $user[1] !== $_SESSION['username']){
-					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"buyItem.php?idItem=$user[0]&bdd=animaux&qts=$user[2]&name=$user[3]\"><img src=\"../img/delete.png\"></a></td></tr>";
+					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"buyItem.php?idItem=$user[0]&bdd=animaux&qts=$user[2]&name=$user[3]&prixItem=$user[4]\"><img src=\"../img/delete.png\"></a></td></tr>";
 				}
 			}
 			echo "</table>";
@@ -32,7 +32,7 @@
 			echo "<table class=\"user\"><tr><td>Nom</td><td>Quantite</td><td>Prix</td><td>Description</td><td>acheter</td></tr>";
 			foreach($tabHistoires as $user){
 				if ($user[0] && $user[1] !== $_SESSION['username']){
-					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"buyItem.php?idItem=$user[0]&bdd=histoires&qts=$user[2]&name=$user[3]\"><img src=\"../img/delete.png\"></a></td></tr>";
+					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"buyItem.php?idItem=$user[0]&bdd=histoires&qts=$user[2]&name=$user[3]&prixItem=$user[4]\"><img src=\"../img/delete.png\"></a></td></tr>";
 				}
 			}
 			echo "</table>";
@@ -53,7 +53,7 @@
 			echo "<table class=\"user\"><tr><td>Nom</td><td>Quantite</td><td>Prix</td><td>Description</td><td>acheter</td></tr>";
 			foreach($tabReves as $user){
 				if ($user[0] && $user[1] !== $_SESSION['username']){
-					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"buyItem.php?idItem=$user[0]&bdd=reves&qts=$user[2]&name=$user[3]\"><img src=\"../img/delete.png\"></a></td></tr>";
+					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"buyItem.php?idItem=$user[0]&bdd=reves&qts=$user[2]&name=$user[3]&prixItem=$user[4]\"><img src=\"../img/delete.png\"></a></td></tr>";
 				}
 			}
 			echo "</table>";
@@ -74,7 +74,7 @@
 			echo "<table class=\"user\"><tr><td>Nom</td><td>Quantite</td><td>Prix</td><td>Description</td><td>acheter</td></tr>";
 			foreach($tabSexe as $user){
 				if ($user[0] && $user[1] !== $_SESSION['username']){
-					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"buyItem.php?idItem=$user[0]&bdd=sexe&qts=$user[2]&name=$user[3]\"><img src=\"../img/delete.png\"></a></td></tr>";
+					echo "<tr><td>$user[3]</td><td>$user[2]</td><td>$user[4]</td><td>$user[5]</td><td><a href=\"buyItem.php?idItem=$user[0]&bdd=sexe&qts=$user[2]&name=$user[3]&prixItem=$user[4]\"><img src=\"../img/delete.png\"></a></td></tr>";
 				}
 			}
 			echo "</table>";
